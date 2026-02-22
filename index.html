@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>E-Commerce | ShopNow India Online Shopping</title>
+
+<meta name="description" content="ShopNow online shopping website in India for electronics, clothing and books at affordable prices.">
+<meta name="keywords" content="online shopping India, ecommerce India, gaming laptop India, cotton t shirt online, self help books India">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+line-height:1.6;
+color:#333;
+background:#f4f4f4;
+}
+
+/* HEADER */
+header{
+background:#89efef;
+padding:1rem;
+text-align:center;
+}
+
+h1{
+font-weight:900;
+font-style:italic;
+font-size:3rem;
+}
+
+/* SEARCH */
+.search-container{
+display:flex;
+justify-content:center;
+margin-top:10px;
+}
+
+#searchBar{
+padding:10px 15px;
+width:280px;
+border-radius:25px;
+border:1px solid #ccc;
+outline:none;
+transition:0.3s;
+}
+
+#searchBar:focus{
+width:320px;
+border-color:#f08e25;
+}
+
+/* NAV */
+nav ul{
+list-style:none;
+display:flex;
+justify-content:center;
+gap:2rem;
+margin-top:1rem;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#f08e25;
+}
+
+/* HERO */
+#hero{
+background:#efcaef;
+padding: 0.5em;
+text-align:center;
+}
+
+/* SECTION HEADINGS */
+section h2{
+text-align:center;
+margin:1.5rem 0 1rem;
+font-size:2rem;
+color:#222;
+}
+
+/* GRID */
+.category-grid,.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:1.5rem;
+padding:2rem 4rem;
+}
+
+/* CATEGORY + PRODUCT CARD */
+.category,.product{
+background:white;
+padding:1rem;
+text-align:center;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.product:hover{
+transform:scale(1.05);
+}
+
+/* IMAGE FIX */
+.product img,
+.category img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+/* TEXT STYLE */
+.product h3{
+margin:10px 0 5px;
+font-size:1.2rem;
+}
+
+.product p{
+font-weight:bold;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+button{
+background:#f08e25;
+color:white;
+border:none;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+width:100%;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+background:#d97706;
+}
+
+/* CART */
+#cartBox{
+position:fixed;
+right: 5px;
+top:5px;
+background:white;
+padding: 10px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+width:200px;
+}
+
+#cartItems{
+margin-top:10px;
+padding-left:15px;
+}
+
+#noResults{
+text-align:center;
+color:red;
+font-weight:bold;
+display:none;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+background:#eb2755;
+text-align:center;
+padding:1rem;
+margin-top:2rem;
+color:white;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ShopNow</h1>
+
+<div class="search-container">
+<input type="text" id="searchBar" placeholder="🔎 Search products...">
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Categories</a></li>
+<li><a href="#">Cart</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<section id="hero">
+<h2>Welcome to Our Store</h2>
+<p>Discover amazing products at great prices!</p>
+</section>
+
+<section id="categories">
+<h2>Shop by Category</h2>
+
+<div class="category-grid">
+
+<div class="category">
+<img src="https://img.freepik.com/premium-photo/illustration-ultra-realistic-4k-image-modern-electronic-device_756405-53536.jpg" alt="Electronics">
+<h3>Electronics</h3>
+</div>
+
+<div class="category">
+<img src="https://www.sweetkama.com/cdn/shop/articles/fashion-clothing-trends-dominating-2024-your-ultimate-style-guide-sweetkama.png?v=1721555852" alt="Clothing">
+<h3>Clothing</h3>
+</div>
+
+<div class="category">
+<img src="https://miro.medium.com/max/10944/1*S81O15rjKfG-BFdnNC6-GQ.jpeg" alt="Books">
+<h3>Books</h3>
+</div>
+
+</div>
+</section>
+
+<section id="products">
+<h2>Featured Products</h2>
+
+<div class="product-grid">
+
+<div class="product">
+<img src="https://electrogadgetplus.com/wp-content/uploads/2024/12/gaming-laptops.png" alt="Gaming Laptop">
+<h3>Gaming Laptop</h3>
+<p>Rs 80000</p>
+<button onclick="addToCart('Gaming Laptop')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://i5.walmartimages.com/seo/Gildan-Women-s-Ultra-Cotton-100-Cotton-T-Shirt-2000L_aca00e7e-658f-4521-94ff-03d7e2c840c5.b1bf0d4a68e7c78ef32d4ae8cd25958d.jpeg" alt="Cotton T-Shirt">
+<h3>Cotton T-Shirt</h3>
+<p>Rs 300</p>
+<button onclick="addToCart('Cotton T-Shirt')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://images.squarespace-cdn.com/content/v1/5fff7f8ae90dd00ceac27c8d/1619639838137-X57C4WZNLMB14W43DAWW/IMG_3682.jpg" alt="Atomic Habit Book">
+<h3>Atomic Habit Book</h3>
+<p>Rs 270</p>
+<button onclick="addToCart('Atomic Habit Book')">Add to Cart</button>
+</div>
+
+</div>
+
+<p id="noResults">No matching products found 😢</p>
+
+</section>
+</main>
+
+<div id="cartBox">
+<h3>Cart 🛒</h3>
+<ul id="cartItems"></ul>
+</div>
+
+<footer>
+<p>&copy; 2026 My Online Store. All rights reserved.</p>
+</footer>
+
+<script>
+// SEARCH
+document.getElementById("searchBar").addEventListener("keyup",function(){
+
+let filter=this.value.toLowerCase();
+let products=document.querySelectorAll(".product");
+let visible=0;
+
+products.forEach(function(p){
+
+if(p.innerText.toLowerCase().includes(filter)){
+p.style.display="block";
+visible++;
+}else{
+p.style.display="none";
+}
+
+});
+
+document.getElementById("noResults").style.display=
+visible===0?"block":"none";
+
+});
+
+// CART
+function addToCart(product){
+let li=document.createElement("li");
+li.textContent=product;
+document.getElementById("cartItems").appendChild(li);
+}
+</script>
+
+</body>
+</html>
